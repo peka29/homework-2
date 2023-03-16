@@ -4,12 +4,16 @@
 // 32679 -> 6
 
 Console.Clear();
-Console.Write("Введите число: ");
-int n1 = Convert.ToInt32(Console.ReadLine());
-int n2 = ();
-int n3 = (n2 % 10);
-
-if(n2 < 100)
+Console.Write("Введите трехзначное число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+if (n < 100)
     Console.WriteLine("Третьей цифры нет");
+else if (n < 1000 && n > 99)
+
+    Console.WriteLine(n % 10);
 else
-    Console.WriteLine(n3);
+{
+    while (n > 999) // если n больше 999 делим на 10 до тех пор пока не будет меньше 999
+        n = n / 10;
+    Console.WriteLine(n % 10); 
+}
